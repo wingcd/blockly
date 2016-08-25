@@ -254,8 +254,7 @@ Blockly.JavaScript.scrub_ = function(block, code) {
       }
     }
   }
-  //when prevent next block,we can get just self block code
-  var nextBlock = block.preventNext ? null : block.nextConnection && block.nextConnection.targetBlock();
+  var nextBlock = block.nextConnection && block.nextConnection.targetBlock();
   var nextCode = Blockly.JavaScript.blockToCode(nextBlock);
   return commentCode + code + nextCode;
 };
